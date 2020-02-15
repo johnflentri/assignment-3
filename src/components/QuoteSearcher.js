@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Quotes from "./Quotes"
-import QuoteLike from "./QuoteLike"
-
+// import QuoteLike from "./QuoteLike"
 
 export default class QuoteSearcher extends Component {
   state = {
@@ -22,13 +21,6 @@ export default class QuoteSearcher extends Component {
       .catch(console.error)
   }
 
-  // changeLike = () => {
-  //   console.log("Like clicked")
-  //   this.setState({
-  //     liked: true
-  //   })
-  // }
-
   render() {
     if (this.state.fetching) {
       return <div>"Loading..."</div>
@@ -42,8 +34,8 @@ export default class QuoteSearcher extends Component {
               <ul>
                 <li id={quoteData._id}>
                   {quoteData.quoteText + "By: " + quoteData.quoteAuthor}<br></br>
-                  <QuoteLike />
                   {<button onClick={this.changeLike}>Like</button>}{<button onClick={this.changeDislike}>Dislike</button>}
+                  {/* <QuoteLike /> */}
                   <br></br>
                 </li>
               </ul>

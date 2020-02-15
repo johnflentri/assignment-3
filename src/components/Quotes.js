@@ -28,3 +28,6 @@ export default class Quotes extends Component {
     )
   }
 }
+
+// I got really stuck trying to assign the button to the state for each quote, 
+// I tried to create the QuoteLike.js component but didn't really know where to go from there
