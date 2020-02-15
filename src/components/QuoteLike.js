@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
 
-export default class Quotes extends Component {
+export default class QuoteLike extends Component {
   state = {
     liked: null
   }
 
   changeLike = () => {
-    console.log("Like clicked")
     this.setState({
       liked: true
     })
   }
-
   changeDislike = () => {
-    console.log("Dislike clicked")
-    this.props.changeDislike()
     this.setState({
       liked: false
     })
@@ -22,8 +18,8 @@ export default class Quotes extends Component {
 
   render() {
     return (
-      <div><h1>Quotes</h1>
-        {this.props.text}
+      <div>
+        <button onClick={this.changeLike}>Like</button><button onClick={this.changeDislike}>Dislike</button>
       </div>
     )
   }
