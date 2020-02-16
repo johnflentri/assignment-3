@@ -5,12 +5,12 @@ export default class Quotes extends Component {
     liked: null
   }
 
-  changeLike = () => {
-    console.log("Like clicked")
-    this.setState({
-      liked: true
-    })
-  }
+  // changeLike = () => {
+  //   console.log("Like clicked")
+  //   this.setState({
+  //     liked: true
+  //   })
+  // }
 
   changeDislike = () => {
     console.log("Dislike clicked")
@@ -23,7 +23,10 @@ export default class Quotes extends Component {
   render() {
     return (
       <div><h1>Quotes</h1>
-        {this.props.text}
+        <ul>
+          {this.props.text}
+          {/* {this.state.liked} */}
+        </ul>
       </div>
     )
   }
