@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import LikeCounter from './LikeCounter';
 
 export default class Quotes extends Component {
   state = {
-    liked: null
+    liked: null,
+    value: null
   }
 
   // changeLike = () => {
@@ -20,9 +22,23 @@ export default class Quotes extends Component {
     })
   }
 
+  // handleChange(event) {
+  //   this.setState({ value: event.target.value });
+  // }
+
+  handleSubmit(event) {
+    event.preventDefault()
+  }
+
   render() {
     return (
       <div><h1>Quotes</h1>
+        <form onSubmit={this.handleSubmit}>
+          <textarea value={this.state.value} onChange={this.handleChange} />
+          <input type="submit" value="Search!" />
+        </form>
+        <LikeCounter />
+        <br></br>
         <ul>
           {this.props.text}
           {/* {this.state.liked} */}

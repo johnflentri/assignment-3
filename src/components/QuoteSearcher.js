@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import Quotes from "./Quotes"
 // import QuoteLike from "./QuoteLike"
-import LikeCounter from './LikeCounter';
 
 export default class QuoteSearcher extends Component {
   state = {
     fetching: true,
-    liked: null,
     quotes: []
   }
 
@@ -17,7 +15,6 @@ export default class QuoteSearcher extends Component {
         console.log("Data arrived!", quoteSearch.results)
         this.setState({
           fetching: false,
-          liked: null,
           quotes: quoteSearch.results
         })
       })
@@ -40,7 +37,6 @@ export default class QuoteSearcher extends Component {
       return (
         <div>
           <ul>
-            <LikeCounter />
             <Quotes text={this.state.quotes.map(quoteData => <li id={quoteData._id}>{quoteData.quoteText + "By: " + quoteData.quoteAuthor}
               {<button onClick={this.changeLike}>Like</button>}{<button onClick={this.changeDislike}>Dislike</button>}</li>)} />
           </ul>
@@ -49,8 +45,6 @@ export default class QuoteSearcher extends Component {
     }
   }
 }
-
-
 
 //   render() {
 //     if (this.state.fetching) {
